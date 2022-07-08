@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { VehicleSchema } from './VehicleInterface';
 
-const CarSchema = z.object({
+export const CarSchema = z.object({
   doorsQty: z.number({
     required_error: 'doorsQty is required',
     invalid_type_error: 'doorsQty must be a number',
@@ -14,4 +14,5 @@ const CarSchema = z.object({
 
 const CarVehicle = z.intersection(CarSchema, VehicleSchema);
 
+export { CarVehicle };
 export type Car = z.infer<typeof CarVehicle>;
