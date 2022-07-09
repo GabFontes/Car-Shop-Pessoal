@@ -22,7 +22,7 @@ export default abstract class GenericController<T> {
 
   protected errors;
 
-  constructor(protected service: GenericService<T>) {
+  constructor(public service: GenericService<T>) {
     this.errors = ControllerErrors;
   }
 
