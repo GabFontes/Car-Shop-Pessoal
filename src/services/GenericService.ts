@@ -4,7 +4,7 @@ import { ZodError } from 'zod';
 import { Model } from '../interfaces/ModelInterface';
 
 export interface ServiceError {
-  error: ZodError;
+  error: ZodError | string;
 }
 
 export default abstract class GenericService<T> {
