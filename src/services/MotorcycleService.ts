@@ -40,6 +40,9 @@ export default class MotorcycleService extends GenericService<Motorcycle> {
     id: string,
     obj: Motorcycle,
   ): Promise<Motorcycle | ServiceError | null> => {
+    if (!categoryVerify(obj.category)) {
+      return { error: 'Invalid category' };
+    }
     const parsed = MotocycleVehicle.safeParse(obj);
     if (!parsed.success) {
       return { error: parsed.error };
