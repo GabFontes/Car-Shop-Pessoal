@@ -29,7 +29,7 @@ describe('Testes Car Controller', () => {
     });
 
     it('Quando é criado um carro corretamente, a função retorna o objeto correto e o status 201', async () => {
-      // req.body = createdCar;
+      req.body = createdCar;
       const car = await carController.create(req, res);
 
       expect(car).to.be.deep.equals(createdCar);
